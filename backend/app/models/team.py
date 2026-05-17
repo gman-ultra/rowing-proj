@@ -23,7 +23,7 @@ class Team(Base):
     name = Column(String(100), nullable=False)
     description = Column(String(500), nullable=True)
     invite_code = Column(String(20), unique=True, nullable=False)
-    owner_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)
+    owner_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 
 

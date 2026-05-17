@@ -1,5 +1,7 @@
 # Rowing Proj 🚣
 
+> **🤖 AI Assistants:** Before writing code, read `AGENTS.md` for full agent instructions. All code generation must use OpenCode CLI — load `skill_view(name='opencode')` and reference `~/.hermes/skills/autonomous-ai-agents/opencode/SKILL.md`.
+
 A rowing training app that aggregates workout data from **manual entry**, **Concept2**, and **Strava**, then visualizes your progress. Users control their own private profiles and can optionally join **teams** to share data and compete on leaderboards.
 
 ## Features (MVP)
