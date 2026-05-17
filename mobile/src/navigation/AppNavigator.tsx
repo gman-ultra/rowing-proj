@@ -1,9 +1,7 @@
 import React from 'react';
 import {
   View,
-  Text,
   ActivityIndicator,
-  TouchableOpacity,
   StyleSheet,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,20 +9,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useAuth } from '../contexts/AuthContext';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
-import DashboardScreen from '../screens/DashboardScreen';
+import MainTabs from './MainTabs';
+import SettingsScreen from '../screens/SettingsScreen';
 import type { AuthStackParamList, AppStackParamList } from './types';
 
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 const AppStack = createNativeStackNavigator<AppStackParamList>();
-
-const HeaderLogout = () => {
-  const { logout } = useAuth();
-  return (
-    <TouchableOpacity onPress={logout} style={styles.headerButton}>
-      <Text style={styles.headerButtonText}>Logout</Text>
-    </TouchableOpacity>
-  );
-};
 
 export default function AppNavigator() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -42,12 +32,14 @@ export default function AppNavigator() {
       {isAuthenticated ? (
         <AppStack.Navigator>
           <AppStack.Screen
-            name="Dashboard"
-            component={DashboardScreen}
-            options={{
-              title: 'RowApp',
-              headerRight: () => <HeaderLogout />,
-            }}
+            name="MainTabs"
+            component={MainTabs}
+            options={{ headerShown: false }}
+          />
+          <AppStack.Screen
+            name="Settings"
+            component={SettingsScreen}
+            options={{ presentation: 'modal', headerShown: false }}
           />
         </AppStack.Navigator>
       ) : (
@@ -66,13 +58,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-  },
-  headerButton: {
-    marginRight: 4,
-  },
-  headerButtonText: {
-    color: '#0D2538',
-    fontSize: 16,
-    fontWeight: '600',
   },
 });

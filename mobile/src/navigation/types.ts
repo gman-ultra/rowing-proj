@@ -4,5 +4,12 @@ export type AuthStackParamList = {
 };
 
 export type AppStackParamList = {
-  Dashboard: undefined;
+  MainTabs: undefined;
+  Settings: undefined;
+};
+
+export type TabParamList = {
+  Teams: undefined;
+  Stats: undefined;
+  Profile: undefined;
 };
