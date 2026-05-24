@@ -29,6 +29,7 @@ class Workout(Base):
 
     # Core workout data
     workout_date = Column(DateTime, nullable=False)
+    workout_name = Column(String(120), nullable=True)
     duration_seconds = Column(Integer, nullable=True)
     distance_meters = Column(Float, nullable=True)
     stroke_rate = Column(Float, nullable=True)      # average strokes/min

@@ -3,7 +3,13 @@ import * as SecureStore from 'expo-secure-store';
 
 const TOKEN_KEY = 'authToken';
 
-export const API_BASE_URL = 'http://192.168.1.186:8001';
+const apiBaseUrl = process.env.EXPO_PUBLIC_API_BASE_URL;
+
+if (!apiBaseUrl) {
+  throw new Error('EXPO_PUBLIC_API_BASE_URL must be set before starting Expo');
+}
+
+export const API_BASE_URL = apiBaseUrl;
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,

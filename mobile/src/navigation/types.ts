@@ -6,6 +6,10 @@ export type AuthStackParamList = {
 export type AppStackParamList = {
   MainTabs: undefined;
   Settings: undefined;
+  WorkoutLog: undefined;
+  LogWorkout: undefined;
+  WorkoutDetail: { workoutId: string };
+  EditWorkout: { workoutId: string };
 };
 
 export type TabParamList = {
