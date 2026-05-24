@@ -24,6 +24,7 @@ class Settings(BaseSettings):
     environment: str = "development"
     debug: bool = True
     frontend_url: str = "http://localhost:3000"
+    cors_origins: str = ""
 
     model_config = {"env_file": "../.env", "env_file_encoding": "utf-8"}
 

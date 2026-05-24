@@ -34,7 +34,9 @@ export default function LoginScreen({ navigation }: Props) {
       await login(email.trim(), password);
     } catch (err: any) {
       const data = err.response?.data;
-      let message = 'Invalid credentials';
+      let message = err.response
+        ? 'Invalid credentials'
+        : 'Could not reach RowApp API. Check the backend URL/port and network connection.';
       if (typeof data?.detail === 'string') {
         message = data.detail;
       } else if (Array.isArray(data?.detail)) {

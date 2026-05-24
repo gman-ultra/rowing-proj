@@ -9,6 +9,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useAuth } from '../contexts/AuthContext';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
+import LogWorkoutScreen from '../screens/LogWorkoutScreen';
+import WorkoutLogScreen from '../screens/WorkoutLogScreen';
+import WorkoutDetailScreen from '../screens/WorkoutDetailScreen';
+import EditWorkoutScreen from '../screens/EditWorkoutScreen';
 import MainTabs from './MainTabs';
 import SettingsScreen from '../screens/SettingsScreen';
 import type { AuthStackParamList, AppStackParamList } from './types';
@@ -40,6 +44,26 @@ export default function AppNavigator() {
             name="Settings"
             component={SettingsScreen}
             options={{ presentation: 'modal', headerShown: false }}
+          />
+          <AppStack.Screen
+            name="WorkoutLog"
+            component={WorkoutLogScreen}
+            options={{ headerShown: false }}
+          />
+          <AppStack.Screen
+            name="LogWorkout"
+            component={LogWorkoutScreen}
+            options={{ headerShown: false }}
+          />
+          <AppStack.Screen
+            name="WorkoutDetail"
+            component={WorkoutDetailScreen}
+            options={{ headerShown: false }}
+          />
+          <AppStack.Screen
+            name="EditWorkout"
+            component={EditWorkoutScreen}
+            options={{ headerShown: false }}
           />
         </AppStack.Navigator>
       ) : (

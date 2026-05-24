@@ -1,6 +1,6 @@
 # Rowing Proj — Implementation Plan
 
-> **🧑‍💻 AI Agents:** All code generation must use OpenCode CLI. Load `skill_view(name='opencode')` first, and see `~/.hermes/skills/autonomous-ai-agents/opencode/SKILL.md` for interaction patterns.
+> **🧑‍💻 AI Agents:** Hermes orchestrates/verifies, OpenCode is the default builder for normal code generation, and Codex is the senior reviewer/debugger/git steward for complex or high-risk work. Load `skill_view(name='opencode')` before coding and `skill_view(name='codex')` before Codex review/debug/git tasks. See `AGENTS.md` for routing rules and WSL/Windows Codex bridge details.
 
 ## Overview
 Build an iOS (and Android) rowing training app that aggregates workout data from manual input, Concept2, and Strava, with private user profiles and team-based data sharing. This is the MVP — scope will be refined as we go.
