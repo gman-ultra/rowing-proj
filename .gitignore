@@ -33,3 +33,10 @@ Thumbs.db
 backend/data/
 *.csv
 !**/tests/fixtures/*.csv
+
+# Local database backups
+*.db.bak*
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite*

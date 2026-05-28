@@ -10,6 +10,7 @@ from app.database import Base, get_db
 from app.main import app
 from app.models.team import Team, TeamMember, TeamRole
 from app.models.user import User
+from app.models.integration import Concept2Connection, OAuthState, StravaConnection
 from app.services.auth import create_access_token, get_password_hash
 
 TEST_DB = os.environ.get("TEST_DB_URL", "sqlite:///./test_rowing_proj.db")

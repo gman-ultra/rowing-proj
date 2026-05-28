@@ -6,7 +6,7 @@ from sqlalchemy import inspect, text
 
 from app.config import settings
 from app.database import Base, SessionLocal, engine
-from app.routers import auth, workouts, teams
+from app.routers import auth, workouts, teams, concept2, strava
 from app.seed import seed_database
 
 
@@ -72,6 +72,8 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(workouts.router)
 app.include_router(teams.router)
+app.include_router(concept2.router)
+app.include_router(strava.router)
 
 
 @app.get("/api/health")
